@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1644a2;
+  --color-brand-light: #2b5fd4;
+  --color-brand-dark: #0f3278;
+  --color-ink: #0a0f1c;
+  --color-ink-muted: #5c6478;
+  --color-surface: #f8f9fc;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e8ebf2;
+  --color-accent: #eef3ff;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.dark {
+  --color-ink: #f8f9fc;
+  --color-ink-muted: #9fa6b5;
+  --color-surface: #0a0f1c;
+  --color-surface-elevated: #111827;
+  --color-border: #1f2937;
+  --color-accent: #1e293b;
+  --color-brand: #3b82f6;
+  --color-brand-light: #60a5fa;
+  --color-brand-dark: #1d4ed8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-6 py-20 md:px-10 md:py-28 lg:px-16;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .glass-nav {
+    @apply border border-border bg-surface-elevated/80 backdrop-blur-xl;
+  }
+
+  .card-premium {
+    @apply rounded-3xl border border-border bg-surface-elevated shadow-[0_8px_40px_-12px_rgba(10,15,28,0.12)];
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-premium:hover {
+    @apply border-brand/20 shadow-[0_20px_50px_-12px_rgba(10,15,28,0.18)];
+    transform: translateY(-5px);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-light hover:shadow-lg hover:shadow-brand/25 active:scale-[0.98];
+  }
+
+  .btn-primary svg {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface-elevated px-7 py-3.5 text-sm font-semibold text-ink transition-all hover:border-brand/30 hover:bg-accent active:scale-[0.98];
+  }
+
+  .btn-secondary svg {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-secondary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .label-tag {
+    @apply inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand;
+  }
+
+  /* Custom Floating Keyframe Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(15px, -25px) scale(1.06);
+    }
+  }
+
+  @keyframes float-reverse {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-15px, 25px) scale(0.94);
+    }
+  }
+
+  .animate-float {
+    animation: float 10s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: float-reverse 12s ease-in-out infinite;
+  }
+}
