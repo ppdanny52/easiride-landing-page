@@ -93,8 +93,8 @@ export function About() {
                 Unlike traditional taxis, we provide a modern tech stack to keep you secure and comfortable.
               </p>
 
-              <div className="mt-6 overflow-hidden rounded-2xl border border-border">
-                <table className="w-full text-left border-collapse">
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
+                <table className="w-full text-left border-collapse min-w-[480px]">
                   <thead>
                     <tr className="bg-surface border-b border-border">
                       <th className="p-4 text-xs font-bold uppercase tracking-wider text-ink-muted">Feature</th>

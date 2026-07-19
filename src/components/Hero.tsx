@@ -20,7 +20,7 @@ export function Hero() {
         <FadeIn direction="left" delay={150}>
           <div className="max-w-xl">
             <span className="label-tag">Premium mobility in Bayelsa</span>
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink md:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-6 text-3xl sm:text-4xl font-extrabold leading-[1.08] tracking-tight text-ink md:text-5xl lg:text-[3.5rem]">
               Your city ride,{' '}
               <span className="text-brand">elevated</span> from pickup to arrival
             </h1>

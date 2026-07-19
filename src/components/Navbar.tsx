@@ -17,6 +17,7 @@ export function Navbar() {
   });
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,12 +38,24 @@ export function Navbar() {
     }
   }, [theme]);
 
+  // Prevent scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-6 py-5 md:px-10 lg:px-16 transition-all duration-300">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-10 lg:px-16 transition-all duration-300">
       <nav
         className={`container-wide flex items-center justify-between rounded-2xl px-6 py-3.5 transition-all duration-300 ${
           isScrolled
@@ -56,6 +69,7 @@ export function Navbar() {
           <span className="text-brand font-extrabold text-2xl leading-none ml-0.5 animate-pulse">.</span>
         </a>
 
+        {/* Desktop Nav Links */}
         <ul className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -69,7 +83,8 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
             type="button"
@@ -87,11 +102,89 @@ export function Navbar() {
             )}
           </button>
 
-          <a href="#download" className="btn-primary">
+          {/* Desktop CTA */}
+          <a href="#download" className="btn-primary hidden sm:inline-flex">
             Get the app
           </a>
+
+          {/* Hamburger Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            type="button"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-ink-muted transition-colors hover:bg-accent hover:text-brand md:hidden cursor-pointer"
+            aria-label="Open Menu"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Drawer Overlay */}
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${
+          isMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      >
+        {/* Backdrop overlay */}
+        <div
+          className="absolute inset-0 bg-ink/40 backdrop-blur-sm"
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* Sliding Panel */}
+        <div
+          className={`absolute right-0 top-0 h-screen w-72 bg-surface-elevated p-6 shadow-2xl border-l border-border transition-transform duration-300 ease-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="flex flex-col h-full justify-between">
+            <div>
+              <div className="flex items-center justify-between">
+                <a href="#" className="flex items-center text-xl font-bold tracking-tight" onClick={() => setIsMenuOpen(false)}>
+                  <span className="text-ink">Easi</span>
+                  <span className="text-brand">Ride</span>
+                  <span className="text-brand font-extrabold text-2xl leading-none ml-0.5 animate-pulse">.</span>
+                </a>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface text-ink-muted hover:text-brand cursor-pointer"
+                  aria-label="Close Menu"
+                >
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <ul className="mt-12 space-y-6">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block text-lg font-semibold text-ink hover:text-brand transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="#download"
+                onClick={() => setIsMenuOpen(false)}
+                className="btn-primary w-full text-center py-3.5 block"
+              >
+                Get the app
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
