@@ -103,9 +103,11 @@ export function Navbar() {
           </button>
 
           {/* Desktop CTA */}
-          <a href="#download" className="btn-primary hidden sm:inline-flex">
-            Get the app
-          </a>
+          <div className="hidden sm:inline-flex">
+            <a href="#download" className="btn-primary">
+              Get the app
+            </a>
+          </div>
 
           {/* Hamburger Menu Button */}
           <button
