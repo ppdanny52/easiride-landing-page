@@ -65,7 +65,7 @@ export function About() {
         <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-start">
           {/* Left Column: Mission & Comparison */}
           <div className="space-y-8">
-            <div className="card-premium p-8 md:p-10">
+            <div className="card-premium p-5 sm:p-8 md:p-10">
               <h3 className="text-xl font-bold text-ink">Our Mission & Core Promise</h3>
               <p className="mt-4 leading-relaxed text-ink-muted">
                 Our mission is to provide safe, affordable, reliable, and convenient transportation while creating economic opportunities for drivers.
@@ -87,7 +87,7 @@ export function About() {
             </div>
 
             {/* Comparison Box */}
-            <div className="card-premium p-8 md:p-10">
+            <div className="card-premium p-5 sm:p-8 md:p-10">
               <h3 className="text-xl font-bold text-ink">Why EasiRide is Different</h3>
               <p className="mt-2 text-sm text-ink-muted">
                 Unlike traditional taxis, we provide a modern tech stack to keep you secure and comfortable.
@@ -131,10 +131,10 @@ export function About() {
           {/* Right Column: Values Grid */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-xl font-bold text-ink mb-6">Our Company Values</h3>
+              <h3 className="text-xl font-bold text-ink mb-6 text-center lg:text-left">Our Company Values</h3>
             </div>
             {values.map((val) => (
-              <div key={val.title} className="card-premium p-6 flex gap-4 items-start">
+              <div key={val.title} className="card-premium p-5 sm:p-6 flex gap-4 items-start">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent">
                   {val.icon}
                 </div>
