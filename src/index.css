@@ -118,4 +118,12 @@
   .animate-float-reverse {
     animation: float-reverse 12s ease-in-out infinite;
   }
+
+  .how-it-works-bg {
+    background-image: linear-gradient(rgba(10, 15, 28, 0.55), rgba(10, 15, 28, 0.55)), url('/InSaver.to_728726820_18084755612643316_5767083849630656871_n.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
+

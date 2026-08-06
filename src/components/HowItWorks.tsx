@@ -27,14 +27,14 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding">
+    <section id="how-it-works" className="section-padding how-it-works-bg">
       <div className="container-wide">
         <div className="mx-auto max-w-2xl text-center">
           <span className="label-tag">Simple Process</span>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             Four Steps to a Smoother Ride
           </h2>
-          <p className="mt-4 text-lg text-ink-muted">
+          <p className="mt-4 text-lg text-white/80">
             From booking to arrival, every step of your trip is designed to be fast, transparent, and stress-free.
           </p>
         </div>
