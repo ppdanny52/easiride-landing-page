@@ -7,7 +7,6 @@ import { RideOptions } from './components/RideOptions';
 import { DriverPartner } from './components/DriverPartner';
 import { SafetyGrid } from './components/SafetyGrid';
 import { Testimonials } from './components/Testimonials';
-import { Faq } from './components/Faq';
 import { CtaBanner } from './components/CtaBanner';
 import { Footer } from './components/Footer';
 import { FadeIn } from './components/FadeIn';
@@ -25,7 +24,6 @@ export default function App() {
         <FadeIn><DriverPartner /></FadeIn>
         <FadeIn><SafetyGrid /></FadeIn>
         <FadeIn><Testimonials /></FadeIn>
-        <FadeIn><Faq /></FadeIn>
         <FadeIn><CtaBanner /></FadeIn>
       </main>
       <Footer />
