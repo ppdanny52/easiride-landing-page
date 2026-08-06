@@ -8,17 +8,17 @@ export function CtaBanner() {
             <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float-reverse" />
           </div>
 
-          <div className="relative grid items-center gap-10 md:grid-cols-2 md:items-start md:gap-8 lg:gap-12">
-            <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
+          <div className="relative grid items-center gap-10 md:grid-cols-2 md:items-start md:gap-8 lg:grid-cols-[47fr_53fr] lg:items-center lg:gap-12">
+            <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left lg:max-w-none lg:pl-10 lg:pr-4 xl:pl-14">
               <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
                 Ready to ride smarter in Bayelsa?
               </h2>
-              <p className="mt-4 text-lg text-white/80">
+              <p className="mt-4 text-lg text-white/80 lg:mt-6">
                 Download the EasiRide app today. Experience safe, reliable, and convenient transportation
                 across Yenagoa with transparent upfront pricing and verified drivers.
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start lg:mt-8">
                 <a
                   href="#"
                   className="inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90 active:scale-[0.98]"
@@ -40,7 +40,7 @@ export function CtaBanner() {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end lg:min-w-0 lg:self-center">
               <img
                 src="/phone-mockup.png"
                 alt="EasiRide App Mockup"
