@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface ValueItem {
   title: string;
@@ -45,47 +45,7 @@ const values: ValueItem[] = [
   },
 ];
 
-interface ComparisonFeature {
-  name: string;
-  easiride: string;
-  traditional: string;
-}
-
-interface ComparisonTab {
-  label: string;
-  features: ComparisonFeature[];
-}
-
-const tabData: Record<'safety' | 'pricing' | 'standards', ComparisonTab> = {
-  safety: {
-    label: 'Safety & Tracking',
-    features: [
-      { name: 'Live GPS Tracking', easiride: 'Real-time location sharing with family & friends', traditional: 'No tracking, route visibility, or records' },
-      { name: 'Verified Drivers', easiride: '100% background-checked & vetted identity', traditional: 'Unverified drivers, no screening process' },
-      { name: 'Emergency SOS Button', easiride: 'Instant in-app trigger alerting dispatch & security', traditional: 'No security access or distress feature' },
-    ]
-  },
-  pricing: {
-    label: 'Pricing & Payments',
-    features: [
-      { name: 'Upfront Fare Pricing', easiride: 'Know the exact price before clicking request', traditional: 'Stressful haggling, arbitrary estimates' },
-      { name: 'Flexible Payments', easiride: 'Pay via cash, debit card, or wallet transfers', traditional: 'Cash only, frequent change change issues' },
-      { name: 'No Surprises', easiride: 'Transparent rates, no climate/arbitrary hikes', traditional: 'Inflated rates during rain or peak hours' },
-    ]
-  },
-  standards: {
-    label: 'Ride Standards',
-    features: [
-      { name: 'Vehicle Condition', easiride: 'Clean standard sedans & vans with AC', traditional: 'Unmaintained, dusty, or uncooled vehicles' },
-      { name: 'Customer Support', easiride: '24/7 support channels & lost-item recovery', traditional: 'No center to report complaints or lost items' },
-      { name: 'Trip Comfort', easiride: 'Comfortable solo sedans & spacious group vans', traditional: 'Overcrowded seating or shared rides' },
-    ]
-  }
-};
-
 export function About() {
-  const [activeTab, setActiveTab] = useState<'safety' | 'pricing' | 'standards'>('safety');
-
   return (
     <section id="about" className="section-padding bg-surface">
       <div className="container-wide">
@@ -102,7 +62,7 @@ export function About() {
 
         {/* Core Layout Split */}
         <div className="mt-16 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          {/* Left Column: Story & Interactive Comparison */}
+          {/* Left Column: Story */}
           <div className="space-y-8">
             {/* Story Card */}
             <div className="card-premium p-5 sm:p-8 md:p-10">
@@ -122,68 +82,6 @@ export function About() {
                     </svg>
                     {promise}
                   </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Interactive Tabbed Comparison Box */}
-            <div className="card-premium p-5 sm:p-8 md:p-10">
-              <h3 className="text-xl font-bold text-ink">Why EasiRide is Different</h3>
-              <p className="mt-2 text-sm text-ink-muted">
-                Tap the categories below to compare EasiRide with traditional local transportation options.
-              </p>
-
-              {/* Tabs Swapping Buttons */}
-              <div className="mt-6 flex border-b border-border">
-                {(Object.keys(tabData) as Array<keyof typeof tabData>).map((key) => (
-                  <button
-                    key={key}
-                    onClick={() => setActiveTab(key)}
-                    type="button"
-                    className={`flex-1 pb-3 text-center text-xs sm:text-sm font-semibold border-b-2 transition-all cursor-pointer ${
-                      activeTab === key
-                        ? 'border-brand text-brand'
-                        : 'border-transparent text-ink-muted hover:text-ink'
-                    }`}
-                  >
-                    {tabData[key].label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Tab Comparison Panels */}
-              <div className="mt-8 space-y-6">
-                {tabData[activeTab].features.map((feature) => (
-                  <div key={feature.name} className="border-b border-border pb-6 last:border-0 last:pb-0">
-                    <h4 className="font-bold text-ink text-base">{feature.name}</h4>
-                    <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                      {/* EasiRide Standard */}
-                      <div className="rounded-2xl bg-green-50/40 dark:bg-green-950/10 border border-green-100/50 dark:border-green-900/20 p-4 flex gap-3 items-start">
-                        <span className="inline-flex items-center justify-center h-5 w-5 shrink-0 rounded-full bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400">
-                          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </span>
-                        <div>
-                          <p className="text-xs font-bold text-green-800 dark:text-green-400 uppercase tracking-wider">EasiRide</p>
-                          <p className="mt-1 text-xs leading-relaxed text-ink-muted">{feature.easiride}</p>
-                        </div>
-                      </div>
-
-                      {/* Traditional Taxi Standard */}
-                      <div className="rounded-2xl bg-red-50/40 dark:bg-red-950/10 border border-red-100/50 dark:border-red-900/20 p-4 flex gap-3 items-start">
-                        <span className="inline-flex items-center justify-center h-5 w-5 shrink-0 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400">
-                          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </span>
-                        <div>
-                          <p className="text-xs font-bold text-red-800 dark:text-red-400 uppercase tracking-wider">Traditional Taxi</p>
-                          <p className="mt-1 text-xs leading-relaxed text-ink-muted">{feature.traditional}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 ))}
               </div>
             </div>
