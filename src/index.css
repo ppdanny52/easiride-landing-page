@@ -125,5 +125,19 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  @keyframes float-phone {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .animate-float-phone {
+    animation: float-phone 4s ease-in-out infinite;
+  }
 }
+
 

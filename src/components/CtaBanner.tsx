@@ -2,7 +2,7 @@ export function CtaBanner() {
   return (
     <section id="download" className="section-padding pb-28">
       <div className="container-wide">
-        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand via-brand-light to-brand-dark px-8 py-16 text-center text-white md:px-16 md:py-20">
+        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand via-brand-light to-brand-dark px-8 pt-16 pb-20 text-center text-white md:px-16 md:pt-20 md:pb-28">
           <div className="pointer-events-none absolute inset-0 opacity-20">
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float" />
             <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float-reverse" />
@@ -37,6 +37,17 @@ export function CtaBanner() {
                 Google Play
               </a>
             </div>
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <img
+              src="/phone-mockup.png"
+              alt="EasiRide App Mockup"
+              loading="lazy"
+              width="310"
+              height="635"
+              className="w-[45%] md:w-[35%] lg:w-[29%] h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)] animate-float-phone"
+            />
           </div>
         </div>
       </div>
