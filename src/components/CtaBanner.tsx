@@ -18,7 +18,7 @@ export function CtaBanner() {
                 across Yenagoa with transparent upfront pricing and verified drivers.
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start lg:mt-8">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start lg:mt-32">
                 <a
                   href="#"
                   className="inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90 active:scale-[0.98]"
