@@ -126,6 +126,13 @@
     background-repeat: no-repeat;
   }
 
+  .safety-section-bg {
+    background-image: linear-gradient(rgba(10, 15, 28, 0.62), rgba(10, 15, 28, 0.62)), url('/safety-section-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   @keyframes float-phone {
     0%, 100% {
       transform: translateY(0);

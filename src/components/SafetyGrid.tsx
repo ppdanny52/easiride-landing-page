@@ -28,14 +28,14 @@ const features = [
 
 export function SafetyGrid() {
   return (
-    <section id="safety" className="section-padding">
+    <section id="safety" className="section-padding safety-section-bg">
       <div className="container-wide">
         <div className="mx-auto max-w-2xl text-center">
           <span className="label-tag">Safety first</span>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
             Built for peace of mind
           </h2>
-          <p className="mt-4 text-lg text-ink-muted">
+          <p className="mt-4 text-lg text-white/80">
             Safety isn&apos;t a feature — it&apos;s the foundation of every ride on EasiRide.
           </p>
         </div>
