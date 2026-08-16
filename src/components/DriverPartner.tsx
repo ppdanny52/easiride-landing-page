@@ -12,7 +12,7 @@ export function DriverPartner() {
     <section id="drive" className="section-padding bg-slate-950 text-white">
       <div className="container-wide grid items-center gap-16 lg:grid-cols-2">
         <div>
-          <span className="inline-flex rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/80">
+          <span className="inline-flex rounded-2xl bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/80">
             Drive with EasiRide
           </span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight md:text-4xl">
@@ -33,7 +33,7 @@ export function DriverPartner() {
 
           <a
             href="#download"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90 active:scale-[0.98]"
+            className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90 active:scale-[0.98]"
           >
             Apply to drive
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
