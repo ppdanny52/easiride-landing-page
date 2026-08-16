@@ -10,21 +10,32 @@ function ArrowIcon() {
 
 export function Hero() {
   return (
-    <section id="book" className="section-padding relative pt-36 md:pt-44">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-32 top-20 h-[520px] w-[520px] rounded-full bg-brand/8 blur-3xl animate-float" />
-        <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-brand/5 blur-3xl animate-float-reverse" />
+    <section id="book" className="section-padding relative pt-36 md:pt-44 overflow-hidden">
+      {/* Background Image Visual of EasiRide Driver & Cab */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/assets/images/easiride-hero-car.png"
+          alt="EasiRide cab driver and blue car"
+          className="h-full w-full object-cover object-[75%_80%] sm:object-[70%_center] md:object-[65%_center] lg:object-right transition-all duration-300"
+        />
+        {/* Dark Navy Gradient Overlay for high text legibility */}
+        <div className="hero-gradient-overlay absolute inset-0" />
       </div>
 
-      <div className="container-wide relative grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute -right-32 top-20 h-[520px] w-[520px] rounded-full bg-brand/10 blur-3xl animate-float" />
+        <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-brand/10 blur-3xl animate-float-reverse" />
+      </div>
+
+      <div className="container-wide relative z-10 grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeIn direction="left" delay={150}>
           <div className="max-w-xl">
             <span className="label-tag">Premium mobility in Bayelsa</span>
-            <h1 className="mt-6 text-3xl sm:text-4xl font-extrabold leading-[1.08] tracking-tight text-ink md:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-6 text-3xl sm:text-4xl font-extrabold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.5rem]">
               Your city ride,{' '}
-              <span className="text-brand">elevated</span> from pickup to arrival
+              <span className="text-brand-light">elevated</span> from pickup to arrival
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-ink-muted">
+            <p className="mt-6 text-lg leading-relaxed text-slate-200">
               EasiRide connects you with professionally verified drivers in seconds. Experience safe, reliable, and convenient transportation across Yenagoa with upfront transparent pricing.
             </p>
 
@@ -33,7 +44,7 @@ export function Hero() {
                 Download app
                 <ArrowIcon />
               </a>
-              <a href="#about" className="btn-secondary">
+              <a href="#about" className="btn-secondary bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur-md">
                 Learn more
               </a>
             </div>
@@ -43,14 +54,14 @@ export function Hero() {
                 {['E', 'R', 'B', 'Y'].map((initial) => (
                   <div
                     key={initial}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-brand text-xs font-bold text-white"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-brand text-xs font-bold text-white shadow-sm"
                   >
                     {initial}
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-ink-muted">
-                Join thousands of commuters preparing for the launch in <span className="font-semibold text-ink">Yenagoa</span>
+              <p className="text-sm text-slate-200">
+                Join thousands of commuters preparing for the launch in <span className="font-semibold text-white">Yenagoa</span>
               </p>
             </div>
           </div>
