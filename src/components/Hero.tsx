@@ -16,7 +16,7 @@ export function Hero() {
         <img
           src="/assets/images/easiride-hero-car.png"
           alt="EasiRide cab driver and blue car"
-          className="h-full w-full object-cover object-[75%_80%] sm:object-[70%_center] md:object-[65%_center] lg:object-right transition-all duration-300"
+          className="h-full w-full object-cover object-[88%_85%] sm:object-[75%_center] md:object-[65%_center] lg:object-right transition-all duration-300"
         />
         {/* Dark Navy Gradient Overlay for high text legibility */}
         <div className="hero-gradient-overlay absolute inset-0" />

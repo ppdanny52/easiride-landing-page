@@ -122,9 +122,9 @@
   .hero-gradient-overlay {
     background: linear-gradient(
       180deg,
-      rgba(7, 16, 35, 0.98) 0%,
-      rgba(7, 16, 35, 0.88) 48%,
-      rgba(7, 16, 35, 0.48) 100%
+      rgba(7, 16, 35, 0.96) 0%,
+      rgba(7, 16, 35, 0.70) 50%,
+      rgba(7, 16, 35, 0.20) 100%
     );
   }
 
