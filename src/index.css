@@ -140,6 +140,13 @@
     }
   }
 
+  .how-it-works-bg {
+    background-image: linear-gradient(rgba(7, 16, 35, 0.75), rgba(7, 16, 35, 0.75)), url('/assets/images/how-it-works-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .safety-section-bg {
     background-image: linear-gradient(rgba(10, 15, 28, 0.62), rgba(10, 15, 28, 0.62)), url('/safety-section-bg.jpg');
     background-size: cover;
