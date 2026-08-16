@@ -11,9 +11,9 @@ const navLinks = [
 export function Navbar() {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'dark';
+      return localStorage.getItem('theme') || 'light';
     }
-    return 'dark';
+    return 'light';
   });
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,9 +64,9 @@ export function Navbar() {
         }`}
       >
         <a href="#" className="flex items-center text-xl font-bold tracking-tight">
-          <span className="text-ink">Easi</span>
-          <span className="text-brand">Ride</span>
-          <span className="text-brand font-extrabold text-2xl leading-none ml-0.5 animate-pulse">.</span>
+          <span className={isScrolled ? 'text-ink' : 'text-white'}>Easi</span>
+          <span className="text-blue-500">Ride</span>
+          <span className="text-blue-500 font-extrabold text-2xl leading-none ml-0.5 animate-pulse">.</span>
         </a>
 
         {/* Desktop Nav Links */}
@@ -75,7 +75,9 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative pb-1 text-sm font-medium text-ink-muted transition-colors hover:text-brand after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand after:transition-all hover:after:w-full"
+                className={`relative pb-1 text-sm font-medium transition-colors hover:text-blue-400 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full ${
+                  isScrolled ? 'text-ink-muted' : 'text-slate-200'
+                }`}
               >
                 {link.label}
               </a>
@@ -88,7 +90,11 @@ export function Navbar() {
           <button
             onClick={toggleTheme}
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-ink-muted transition-all hover:bg-accent hover:text-brand hover:scale-105 active:scale-95 cursor-pointer"
+            className={`flex h-10 w-10 items-center justify-center rounded-xl border transition-all hover:scale-105 active:scale-95 cursor-pointer ${
+              isScrolled
+                ? 'border-border bg-surface-elevated text-ink-muted hover:bg-accent hover:text-brand'
+                : 'border-slate-700/80 bg-slate-900/60 text-slate-200 hover:bg-slate-800 hover:text-white'
+            }`}
             aria-label="Toggle Theme"
           >
             {theme === 'light' ? (
@@ -104,7 +110,7 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden sm:inline-flex">
-            <a href="#download" className="btn-primary">
+            <a href="#download" className="btn-primary bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30">
               Get the app
             </a>
           </div>
@@ -113,7 +119,11 @@ export function Navbar() {
           <button
             onClick={() => setIsMenuOpen(true)}
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-ink-muted transition-colors hover:bg-accent hover:text-brand md:hidden cursor-pointer"
+            className={`flex h-10 w-10 items-center justify-center rounded-xl border transition-colors md:hidden cursor-pointer ${
+              isScrolled
+                ? 'border-border bg-surface-elevated text-ink-muted hover:bg-accent hover:text-brand'
+                : 'border-slate-700/80 bg-slate-900/60 text-slate-200 hover:bg-slate-800 hover:text-white'
+            }`}
             aria-label="Open Menu"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
