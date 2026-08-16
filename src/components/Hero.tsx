@@ -16,11 +16,11 @@ export function Hero() {
         <img
           src="/hero-driver-bg.jpg"
           alt="EasiRide cab driver driving"
-          className="h-full w-full object-cover object-right md:object-center opacity-75 dark:opacity-70 transition-opacity duration-300"
+          className="h-full w-full object-cover object-[75%_center] md:object-center opacity-70 sm:opacity-75 dark:opacity-65 transition-opacity duration-300"
         />
-        {/* Precise directional gradient overlays to keep text readable while preserving image sharpness */}
-        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent dark:from-surface dark:via-surface/85 dark:to-surface/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/30" />
+        {/* Mobile vs Desktop overlay gradients tailored for contrast and car visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/60 to-surface/95 sm:bg-gradient-to-r sm:from-surface sm:via-surface/80 sm:to-transparent dark:from-surface/90 dark:via-surface/65 dark:to-surface/95 sm:dark:to-surface/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40" />
       </div>
 
       <div className="container-wide relative z-10 grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
@@ -64,8 +64,8 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn direction="right" delay={300}>
-          <div className="card-premium relative p-8 md:p-10">
-            <div className="absolute -right-4 -top-4 rounded-2xl bg-brand px-4 py-2 text-xs font-semibold text-white shadow-lg">
+          <div className="card-premium relative p-6 sm:p-8 md:p-10">
+            <div className="absolute right-4 -top-3.5 sm:-right-3 sm:-top-3.5 rounded-full bg-brand px-4 py-1.5 text-xs font-semibold text-white shadow-lg">
               Avg. pickup 5 min
             </div>
 
