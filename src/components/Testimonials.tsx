@@ -5,6 +5,7 @@ const testimonials = [
     name: 'Ebimene K.',
     role: 'State Civil Servant',
     rating: 5,
+    avatar: '/assets/images/testimonial-1.jpg',
   },
   {
     quote:
@@ -12,6 +13,7 @@ const testimonials = [
     name: 'Tamara S.',
     role: 'EasiRide Driver Partner',
     rating: 5,
+    avatar: '/assets/images/testimonial-2.jpg',
   },
   {
     quote:
@@ -19,6 +21,7 @@ const testimonials = [
     name: 'Tari E.',
     role: 'Local Business Consultant',
     rating: 5,
+    avatar: '/assets/images/testimonial-3.jpg',
   },
 ];
 
@@ -51,9 +54,11 @@ export function Testimonials() {
               <StarRow count={item.rating} />
               <p className="mt-5 flex-1 leading-relaxed text-ink-muted">&ldquo;{item.quote}&rdquo;</p>
               <footer className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                  {item.name.charAt(0)}
-                </div>
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  className="h-12 w-12 rounded-full object-cover border-2 border-brand/30 shadow-md"
+                />
                 <div>
                   <cite className="not-italic font-semibold text-ink">{item.name}</cite>
                   <p className="text-sm text-ink-muted">{item.role}</p>
