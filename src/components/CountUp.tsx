@@ -20,21 +20,20 @@ export function CountUp({
   formattingFn,
 }: CountUpProps) {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     // Check reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setCount(end);
-      setHasAnimated(true);
       return;
     }
 
+    let animationFrameId: number | null = null;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+        if (entry.isIntersecting) {
           let startTime: number | null = null;
 
           const animateCount = (timestamp: number) => {
@@ -48,17 +47,19 @@ export function CountUp({
             setCount(currentCount);
 
             if (progress < 1) {
-              requestAnimationFrame(animateCount);
+              animationFrameId = requestAnimationFrame(animateCount);
             } else {
               setCount(end);
             }
           };
 
-          requestAnimationFrame(animateCount);
-          observer.unobserve(entry.target);
+          animationFrameId = requestAnimationFrame(animateCount);
+        } else {
+          if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          setCount(0);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     if (ref.current) {
@@ -66,9 +67,10 @@ export function CountUp({
     }
 
     return () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
       observer.disconnect();
     };
-  }, [end, duration, hasAnimated]);
+  }, [end, duration]);
 
   const formatNumber = (val: number) => {
     if (formattingFn) return formattingFn(val);

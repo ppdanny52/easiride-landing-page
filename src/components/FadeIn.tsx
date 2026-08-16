@@ -36,14 +36,11 @@ export function FadeIn({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-          observer.unobserve(entry.target);
-        }
+        setIsIntersecting(entry.isIntersecting);
       },
       {
         threshold,
-        rootMargin: '0px 0px -50px 0px',
+        rootMargin: '0px 0px -30px 0px',
       }
     );
 
@@ -81,7 +78,7 @@ export function FadeIn({
         filter: blur ? (isIntersecting ? 'blur(0px)' : 'blur(4px)') : undefined,
         transitionProperty: 'opacity, transform, filter',
         transitionDuration: `${duration}ms`,
-        transitionDelay: `${delay}ms`,
+        transitionDelay: isIntersecting ? `${delay}ms` : '0ms',
         transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
       }}
     >
