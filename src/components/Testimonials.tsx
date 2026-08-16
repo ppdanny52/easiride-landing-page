@@ -1,25 +1,25 @@
 const testimonials = [
   {
     quote:
-      'Commuting to the State Secretariat used to be a hassle every morning with traditional taxis. EasiRide has changed that. The app is fast, fares are clear, and I arrive completely stress-free.',
-    name: 'Ebimene K.',
-    role: 'State Civil Servant',
+      'With work and everything else, I just want a simple way to get where I’m going. EasiRide has been really helpful for me. I can request a ride when I need one and get on with my day. It’s convenient, easy to use, and I’m glad we have something like this here in Bayelsa.',
+    name: 'Bobby Pere Igo',
+    role: 'Civil Servant',
     rating: 5,
     avatar: '/assets/images/testimonial-1.jpg',
   },
   {
     quote:
-      'Driving with EasiRide gives me the flexibility and independence I need. The onboarding was fast, and the daily earning visibility helps me budget and support my family without delays.',
-    name: 'Tamara S.',
-    role: 'EasiRide Driver Partner',
+      'I’ve really enjoyed driving with EasiRide. Before, finding passengers could take a lot of time, but with the app, I can get ride requests directly on my phone. It makes things easier and helps me spend more time driving and earning instead of waiting around.',
+    name: 'Peter Kalaigo',
+    role: 'Driver',
     rating: 5,
     avatar: '/assets/images/testimonial-2.jpg',
   },
   {
     quote:
-      'I use the Comfort tier for meetings around Yenagoa and trips to NDU. Clean cars, air conditioning, professional drivers, and upfront pricing make it the best option in Bayelsa.',
-    name: 'Tari E.',
-    role: 'Local Business Consultant',
+      'I honestly find EasiRide really helpful. I use it when I’m going to school, meeting up with friends, or heading home. I don’t have to worry too much about finding a ride anymore. I just book through the app and go. It’s made moving around a lot easier for me.',
+    name: 'Tariebi Alex',
+    role: 'Student',
     rating: 5,
     avatar: '/assets/images/testimonial-3.jpg',
   },
