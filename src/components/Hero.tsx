@@ -10,13 +10,13 @@ function ArrowIcon() {
 
 export function Hero() {
   return (
-    <section id="book" className="section-padding relative pt-36 md:pt-44 overflow-hidden">
+    <section id="book" className="section-padding relative pt-36 pb-40 md:pt-44 md:pb-28 overflow-hidden">
       {/* Background Image Visual of EasiRide Driver & Cab */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="/assets/images/easiride-hero-car.png"
           alt="EasiRide cab driver and blue car"
-          className="h-full w-full object-cover object-[60%_85%] sm:object-[55%_center] md:object-[65%_center] lg:object-right transition-all duration-300"
+          className="h-full w-full object-cover object-[60%_100%] sm:object-[55%_center] md:object-[65%_center] lg:object-right transition-all duration-300"
         />
         {/* Dark Navy Gradient Overlay for high text legibility */}
         <div className="hero-gradient-overlay absolute inset-0" />
