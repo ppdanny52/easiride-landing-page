@@ -13,7 +13,7 @@ export function Footer() {
           </div>
 
           <div className="flex gap-6">
-            {['Instagram', 'TikTok'].map((social) => (
+            {['Instagram', 'TikTok', 'WhatsApp'].map((social) => (
               <a
                 key={social}
                 href="#"
