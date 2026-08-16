@@ -55,7 +55,7 @@
   }
 
   .card-premium {
-    @apply rounded-3xl border border-border bg-surface-elevated shadow-[0_8px_40px_-12px_rgba(10,15,28,0.12)];
+    @apply rounded-3xl border border-border bg-surface-elevated/90 backdrop-blur-md shadow-[0_8px_40px_-12px_rgba(10,15,28,0.12)];
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 

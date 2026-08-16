@@ -11,21 +11,16 @@ function ArrowIcon() {
 export function Hero() {
   return (
     <section id="book" className="section-padding relative pt-36 md:pt-44 min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image of EasiRide Driver & Cab */}
-      <div className="absolute inset-0 z-0">
+      {/* Sharp & Crisp Background Image of EasiRide Driver & Cab */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="/hero-driver-bg.jpg"
           alt="EasiRide cab driver driving"
-          className="h-full w-full object-cover object-right-top md:object-center opacity-30 dark:opacity-40"
+          className="h-full w-full object-cover object-right md:object-center opacity-75 dark:opacity-70 transition-opacity duration-300"
         />
-        {/* Subtle Gradient Overlays for contrast and seamless blend */}
-        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/85 to-surface/40 dark:from-surface dark:via-surface/90 dark:to-surface/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/60" />
-      </div>
-
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute -right-32 top-20 h-[520px] w-[520px] rounded-full bg-brand/10 blur-3xl animate-float" />
-        <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-brand/10 blur-3xl animate-float-reverse" />
+        {/* Precise directional gradient overlays to keep text readable while preserving image sharpness */}
+        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent dark:from-surface dark:via-surface/85 dark:to-surface/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/30" />
       </div>
 
       <div className="container-wide relative z-10 grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
