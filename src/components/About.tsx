@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { FadeIn } from './FadeIn';
 
 interface ValueItem {
   title: string;
@@ -47,60 +48,67 @@ const values: ValueItem[] = [
 
 export function About() {
   return (
-    <section id="about" className="section-padding bg-surface">
+    <section id="about" className="section-padding bg-surface overflow-hidden">
       <div className="container-wide">
         {/* Upper Title Block */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="label-tag">About EasiRide</span>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
-            Transforming How Bayelsa Moves
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-            EasiRide is a technology-driven ride-hailing platform built to transform transportation in Bayelsa State, Nigeria, beginning with Yenagoa and expanding across the state.
-          </p>
-        </div>
+        <FadeIn direction="up">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="label-tag">About EasiRide</span>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+              Transforming How Bayelsa Moves
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-ink-muted">
+              EasiRide is a technology-driven ride-hailing platform built to transform transportation in Bayelsa State, Nigeria, beginning with Yenagoa and expanding across the state.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Core Layout Split */}
         <div className="mt-16 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           {/* Left Column: Story */}
-          <div className="space-y-8">
-            {/* Story Card */}
-            <div className="card-premium p-5 sm:p-8 md:p-10">
-              <h3 className="text-xl font-bold text-ink">Our Mission & Core Promise</h3>
-              <p className="mt-4 leading-relaxed text-ink-muted">
-                Our mission is to provide safe, affordable, reliable, and convenient transportation while creating economic opportunities for drivers.
-              </p>
-              <p className="mt-4 leading-relaxed text-ink-muted">
-                EasiRide connects riders with professionally verified drivers through an intuitive mobile application that makes requesting rides fast, transparent, and stress-free.
-              </p>
-              
-              <div className="mt-6 flex flex-wrap gap-3">
-                {['Fast Pickups', 'Fair Pricing', 'Safe Rides', 'Verified Drivers'].map((promise) => (
-                  <span key={promise} className="inline-flex items-center gap-1.5 rounded-full bg-accent/70 px-3 py-1 text-xs font-semibold text-brand">
-                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {promise}
-                  </span>
-                ))}
+          <FadeIn direction="up" delay={100} duration={650}>
+            <div className="space-y-8">
+              <div className="card-premium p-5 sm:p-8 md:p-10">
+                <h3 className="text-xl font-bold text-ink">Our Mission & Core Promise</h3>
+                <p className="mt-4 leading-relaxed text-ink-muted">
+                  Our mission is to provide safe, affordable, reliable, and convenient transportation while creating economic opportunities for drivers.
+                </p>
+                <p className="mt-4 leading-relaxed text-ink-muted">
+                  EasiRide connects riders with professionally verified drivers through an intuitive mobile application that makes requesting rides fast, transparent, and stress-free.
+                </p>
+                
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {['Fast Pickups', 'Fair Pricing', 'Safe Rides', 'Verified Drivers'].map((promise) => (
+                    <span key={promise} className="inline-flex items-center gap-1.5 rounded-2xl bg-accent/70 px-3 py-1 text-xs font-semibold text-brand">
+                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {promise}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Column: Values Grid */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-ink text-center lg:text-left">Our Company Values</h3>
+            <FadeIn direction="up" delay={150}>
+              <h3 className="text-xl font-bold text-ink text-center lg:text-left">Our Company Values</h3>
+            </FadeIn>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              {values.map((val) => (
-                <div key={val.title} className="card-premium p-5 sm:p-6 flex gap-4 items-start border-l-4 border-l-brand">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-brand">
-                    {val.icon}
+              {values.map((val, index) => (
+                <FadeIn key={val.title} direction="up" delay={200 + index * 90} duration={600}>
+                  <div className="card-premium p-5 sm:p-6 flex gap-4 items-start border-l-4 border-l-brand">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-brand">
+                      {val.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-ink">{val.title}</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-muted">{val.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-ink">{val.title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-muted">{val.description}</p>
-                  </div>
-                </div>
+                </FadeIn>
               ))}
             </div>
           </div>

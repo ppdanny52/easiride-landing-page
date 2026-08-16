@@ -1,3 +1,5 @@
+import { FadeIn } from './FadeIn';
+
 const testimonials = [
   {
     quote:
@@ -39,32 +41,36 @@ function StarRow({ count }: { count: number }) {
 
 export function Testimonials() {
   return (
-    <section className="section-padding bg-surface-elevated">
+    <section id="testimonials" className="section-padding bg-surface-elevated overflow-hidden">
       <div className="container-wide">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="label-tag">Community voices</span>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
-            Loved by riders and drivers alike
-          </h2>
-        </div>
+        <FadeIn direction="up">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="label-tag">Community voices</span>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+              Loved by riders and drivers alike
+            </h2>
+          </div>
+        </FadeIn>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((item) => (
-            <blockquote key={item.name} className="card-premium flex flex-col p-8">
-              <StarRow count={item.rating} />
-              <p className="mt-5 flex-1 leading-relaxed text-ink-muted">&ldquo;{item.quote}&rdquo;</p>
-              <footer className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  className="h-12 w-12 rounded-full object-cover border-2 border-brand/30 shadow-md"
-                />
-                <div>
-                  <cite className="not-italic font-semibold text-ink">{item.name}</cite>
-                  <p className="text-sm text-ink-muted">{item.role}</p>
-                </div>
-              </footer>
-            </blockquote>
+          {testimonials.map((item, index) => (
+            <FadeIn key={item.name} direction="up" delay={index * 120} duration={650} scale>
+              <blockquote className="card-premium flex flex-col p-8 h-full">
+                <StarRow count={item.rating} />
+                <p className="mt-5 flex-1 leading-relaxed text-ink-muted">&ldquo;{item.quote}&rdquo;</p>
+                <footer className="mt-8 flex items-center gap-4 border-t border-border pt-6">
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
+                    className="h-12 w-12 rounded-full object-cover border-2 border-brand/30 shadow-md transition-transform duration-300 hover:scale-110"
+                  />
+                  <div>
+                    <cite className="not-italic font-semibold text-ink">{item.name}</cite>
+                    <p className="text-sm text-ink-muted">{item.role}</p>
+                  </div>
+                </footer>
+              </blockquote>
+            </FadeIn>
           ))}
         </div>
       </div>

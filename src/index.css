@@ -56,12 +56,13 @@
 
   .card-premium {
     @apply rounded-3xl border border-border bg-surface-elevated shadow-[0_8px_40px_-12px_rgba(10,15,28,0.12)];
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, box-shadow;
   }
 
   .card-premium:hover {
-    @apply border-brand/20 shadow-[0_20px_50px_-12px_rgba(10,15,28,0.18)];
-    transform: translateY(-5px);
+    @apply border-brand/25 shadow-[0_24px_48px_-12px_rgba(10,15,28,0.18)];
+    transform: translateY(-6px) scale(1.015);
   }
 
   .btn-primary {

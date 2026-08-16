@@ -9,22 +9,21 @@ import { SafetyGrid } from './components/SafetyGrid';
 import { Testimonials } from './components/Testimonials';
 import { CtaBanner } from './components/CtaBanner';
 import { Footer } from './components/Footer';
-import { FadeIn } from './components/FadeIn';
 
 export default function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-surface text-ink">
       <Navbar />
       <main>
         <Hero />
-        <FadeIn><StatsBar /></FadeIn>
-        <FadeIn><HowItWorks /></FadeIn>
-        <FadeIn><About /></FadeIn>
-        <FadeIn><RideOptions /></FadeIn>
-        <FadeIn><DriverPartner /></FadeIn>
-        <FadeIn><SafetyGrid /></FadeIn>
-        <FadeIn><Testimonials /></FadeIn>
-        <FadeIn><CtaBanner /></FadeIn>
+        <StatsBar />
+        <HowItWorks />
+        <About />
+        <RideOptions />
+        <DriverPartner />
+        <SafetyGrid />
+        <Testimonials />
+        <CtaBanner />
       </main>
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import { FadeIn } from './FadeIn';
+import { Parallax } from './Parallax';
 
 function ArrowIcon() {
   return (
@@ -11,14 +12,16 @@ function ArrowIcon() {
 export function Hero() {
   return (
     <section id="book" className="section-padding relative pt-36 pb-40 md:pt-44 md:pb-28 overflow-hidden">
-      {/* Background Image Visual of EasiRide Driver & Cab */}
+      {/* Background Image Visual with subtle parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
-          src="/assets/images/easiride-hero-car.png"
-          alt="EasiRide cab driver and blue car"
-          className="h-full w-full object-cover object-[60%_100%] sm:object-[55%_center] md:object-[65%_center] lg:object-right transition-all duration-300"
-        />
-        {/* Dark Navy Gradient Overlay for high text legibility */}
+        <Parallax speed={0.04} className="h-full w-full">
+          <img
+            src="/assets/images/easiride-hero-car.png"
+            alt="EasiRide cab driver and blue car"
+            className="h-full w-full object-cover object-[60%_100%] sm:object-[55%_center] md:object-[65%_center] lg:object-right transition-transform duration-700 ease-out"
+          />
+        </Parallax>
+        {/* Dark Navy Gradient Overlay for text legibility */}
         <div className="hero-gradient-overlay absolute inset-0" />
       </div>
 
@@ -28,17 +31,22 @@ export function Hero() {
       </div>
 
       <div className="container-wide relative z-10 flex min-h-[60vh] md:min-h-[70vh] items-center">
-        <FadeIn direction="left" delay={150}>
-          <div className="max-w-xl lg:max-w-2xl">
+        <div className="max-w-xl lg:max-w-2xl">
+          <FadeIn direction="up" delay={0} duration={600}>
             <span className="label-tag">Premium mobility in Bayelsa</span>
             <h1 className="mt-6 text-3xl sm:text-4xl font-extrabold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.5rem]">
               Your city ride,{' '}
               <span className="text-brand-light">elevated</span> from pickup to arrival
             </h1>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={100} duration={600}>
             <p className="mt-6 text-lg leading-relaxed text-slate-200">
               EasiRide connects you with professionally verified drivers in seconds. Experience safe, reliable, and convenient transportation across Yenagoa with upfront transparent pricing.
             </p>
+          </FadeIn>
 
+          <FadeIn direction="up" delay={200} duration={600}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a href="#download" className="btn-primary">
                 Download app
@@ -48,13 +56,15 @@ export function Hero() {
                 Learn more
               </a>
             </div>
+          </FadeIn>
 
+          <FadeIn direction="up" delay={300} duration={600} scale>
             <div className="mt-12 flex items-center gap-6">
               <div className="flex -space-x-3">
                 {['E', 'R', 'B', 'Y'].map((initial) => (
                   <div
                     key={initial}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-brand text-xs font-bold text-white shadow-sm"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-brand text-xs font-bold text-white shadow-sm transition-transform duration-300 hover:scale-110"
                   >
                     {initial}
                   </div>
@@ -64,8 +74,8 @@ export function Hero() {
                 Join thousands of commuters preparing for the launch in <span className="font-semibold text-white">Yenagoa</span>
               </p>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

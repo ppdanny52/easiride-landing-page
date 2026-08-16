@@ -5,20 +5,35 @@ interface FadeInProps {
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   duration?: number;
+  scale?: boolean;
+  blur?: boolean;
   className?: string;
+  threshold?: number;
 }
 
 export function FadeIn({
   children,
   delay = 0,
   direction = 'up',
-  duration = 700,
+  duration = 650,
+  scale = false,
+  blur = false,
   className = '',
+  threshold = 0.1,
 }: FadeInProps) {
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check user preference for reduced motion
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) {
+      setPrefersReducedMotion(true);
+      setIsIntersecting(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -27,8 +42,8 @@ export function FadeIn({
         }
       },
       {
-        threshold: 0.05,
-        rootMargin: '0px 0px -40px 0px',
+        threshold,
+        rootMargin: '0px 0px -50px 0px',
       }
     );
 
@@ -39,27 +54,35 @@ export function FadeIn({
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [threshold]);
 
-  const directionClasses = {
-    up: 'translate-y-8',
-    down: '-translate-y-8',
-    left: 'translate-x-8',
-    right: '-translate-x-8',
-    none: '',
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  const directionTransform = {
+    up: 'translate3d(0, 32px, 0)',
+    down: 'translate3d(0, -32px, 0)',
+    left: 'translate3d(32px, 0, 0)',
+    right: 'translate3d(-32px, 0, 0)',
+    none: 'translate3d(0, 0, 0)',
   };
 
-  const initialClass = isIntersecting
-    ? 'opacity-100 translate-x-0 translate-y-0'
-    : `opacity-0 ${directionClasses[direction]}`;
+  const initialTransform = `${directionTransform[direction]} ${scale ? 'scale(0.97)' : ''}`.trim();
+  const activeTransform = 'translate3d(0, 0, 0) scale(1)';
 
   return (
     <div
       ref={ref}
-      className={`transition-all ease-out ${initialClass} ${className}`}
+      className={`will-change-[transform,opacity] ${className}`}
       style={{
+        opacity: isIntersecting ? 1 : 0,
+        transform: isIntersecting ? activeTransform : initialTransform,
+        filter: blur ? (isIntersecting ? 'blur(0px)' : 'blur(4px)') : undefined,
+        transitionProperty: 'opacity, transform, filter',
         transitionDuration: `${duration}ms`,
         transitionDelay: `${delay}ms`,
+        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
       }}
     >
       {children}
