@@ -3,17 +3,17 @@ import { Parallax } from './Parallax';
 
 export function CtaBanner() {
   return (
-    <section id="download" className="section-padding pb-28 overflow-hidden">
+    <section id="download" className="px-4 py-12 sm:px-6 md:px-8 lg:px-12 md:py-20 overflow-hidden">
       <div className="container-wide">
         <FadeIn direction="up" duration={700} scale threshold={0.15}>
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand via-brand-light to-brand-dark px-8 pt-16 pb-20 text-white md:px-16 md:pt-20 md:pb-28 shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand via-brand-light to-brand-dark px-6 pt-12 pb-16 text-white sm:px-10 md:px-14 md:pt-16 md:pb-24 shadow-2xl">
             <div className="pointer-events-none absolute inset-0 opacity-20">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float-reverse" />
             </div>
 
             <div className="relative grid items-center gap-10 md:grid-cols-2 md:items-start md:gap-8 lg:grid-cols-[47fr_53fr] lg:items-center lg:gap-12">
-              <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left lg:max-w-none lg:pl-10 lg:pr-4 xl:pl-14">
+              <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left lg:max-w-none lg:pl-6 lg:pr-2 xl:pl-10">
                 <FadeIn direction="up" delay={100} duration={600}>
                   <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
                     Ready to ride smarter in Bayelsa?
@@ -28,7 +28,7 @@ export function CtaBanner() {
                 </FadeIn>
 
                 <FadeIn direction="up" delay={300} duration={600}>
-                  <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start lg:mt-16">
+                  <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start lg:mt-12">
                     <a
                       href="#"
                       className="inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
