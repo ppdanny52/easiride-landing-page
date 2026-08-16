@@ -19,7 +19,7 @@ export function DriverPartner() {
             <span className="inline-flex rounded-2xl bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/80">
               Drive with EasiRide
             </span>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight md:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight md:text-4xl">
               Turn your drive time into reliable income
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-white/70">
@@ -56,7 +56,7 @@ export function DriverPartner() {
             <div className="card-premium overflow-hidden p-0">
               <div className="bg-gradient-to-br from-brand to-brand-dark p-8 md:p-10 text-white">
                 <p className="text-sm font-medium text-white/80">Average weekly earnings</p>
-                <p className="mt-2 text-5xl font-extrabold tracking-tight text-white">
+                <p className="mt-2 text-5xl font-bold tracking-tight text-white">
                   <CountUp end={120000} prefix="₦" duration={1800} />
                 </p>
                 <p className="mt-2 text-sm text-white/70">Based on 30 hrs/week · Comfort tier in Yenagoa</p>

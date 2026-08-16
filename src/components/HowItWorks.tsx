@@ -34,7 +34,7 @@ export function HowItWorks() {
         <FadeIn direction="up" delay={0}>
           <div className="mx-auto max-w-2xl text-center">
             <span className="label-tag">Simple Process</span>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white md:text-4xl">
               Four Steps to a Smoother Ride
             </h2>
             <p className="mt-4 text-lg text-white/80">

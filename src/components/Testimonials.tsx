@@ -46,7 +46,7 @@ export function Testimonials() {
         <FadeIn direction="up">
           <div className="mx-auto max-w-2xl text-center">
             <span className="label-tag">Community voices</span>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-ink md:text-4xl">
               Loved by riders and drivers alike
             </h2>
           </div>

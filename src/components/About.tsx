@@ -54,7 +54,7 @@ export function About() {
         <FadeIn direction="up">
           <div className="mx-auto max-w-3xl text-center">
             <span className="label-tag">About EasiRide</span>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-ink md:text-4xl">
               Transforming How Bayelsa Moves
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-muted">

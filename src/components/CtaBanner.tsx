@@ -15,7 +15,7 @@ export function CtaBanner() {
             <div className="relative grid items-center gap-10 md:grid-cols-2 md:items-start md:gap-8 lg:grid-cols-[47fr_53fr] lg:items-center lg:gap-12">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left lg:max-w-none lg:pl-10 lg:pr-4 xl:pl-14">
                 <FadeIn direction="up" delay={100} duration={600}>
-                  <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
+                  <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
                     Ready to ride smarter in Bayelsa?
                   </h2>
                 </FadeIn>

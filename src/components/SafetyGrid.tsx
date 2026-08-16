@@ -35,7 +35,7 @@ export function SafetyGrid() {
         <FadeIn direction="up">
           <div className="mx-auto max-w-2xl text-center">
             <span className="label-tag">Safety first</span>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white md:text-4xl">
               Built for peace of mind
             </h2>
             <p className="mt-4 text-lg text-white/80">
@@ -58,11 +58,11 @@ export function SafetyGrid() {
               </div>
               <div className="mt-8 flex items-center gap-4">
                 <div className="rounded-xl bg-accent px-4 py-3">
-                  <p className="text-2xl font-extrabold text-brand">100%</p>
+                  <p className="text-2xl font-bold text-brand">100%</p>
                   <p className="text-xs font-medium text-ink-muted">Drivers verified</p>
                 </div>
                 <div className="rounded-xl bg-accent px-4 py-3">
-                  <p className="text-2xl font-extrabold text-brand">0</p>
+                  <p className="text-2xl font-bold text-brand">0</p>
                   <p className="text-xs font-medium text-ink-muted">Tolerance policy</p>
                 </div>
               </div>

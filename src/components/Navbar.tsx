@@ -44,7 +44,7 @@ export function Navbar() {
         <a href="#" className="flex items-center text-xl font-bold tracking-tight">
           <span className="text-ink">Easi</span>
           <span className="text-brand">Ride</span>
-          <span className="text-brand font-extrabold text-2xl leading-none ml-0.5 animate-pulse">.</span>
+          <span className="text-brand font-bold text-2xl leading-none ml-0.5 animate-pulse">.</span>
         </a>
 
         {/* Desktop Nav Links */}
@@ -107,7 +107,7 @@ export function Navbar() {
                 <a href="#" className="flex items-center text-xl font-bold tracking-tight" onClick={() => setIsMenuOpen(false)}>
                   <span className="text-ink">Easi</span>
                   <span className="text-brand">Ride</span>
-                  <span className="text-brand font-extrabold text-2xl leading-none ml-0.5 animate-pulse">.</span>
+                  <span className="text-brand font-bold text-2xl leading-none ml-0.5 animate-pulse">.</span>
                 </a>
                 <button
                   onClick={() => setIsMenuOpen(false)}

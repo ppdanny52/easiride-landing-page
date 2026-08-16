@@ -62,7 +62,7 @@ export function RideOptions() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-xl">
               <span className="label-tag">Ride Options</span>
-              <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+              <h2 className="mt-5 text-3xl font-bold tracking-tight text-ink md:text-4xl">
                 Choose the Ride that Fits Your Day
               </h2>
               <p className="mt-4 text-lg text-ink-muted">
@@ -99,7 +99,7 @@ export function RideOptions() {
                 </h3>
 
                 <div className={`mt-6 flex items-baseline gap-3 ${ride.dark ? 'text-white' : ''}`}>
-                  <span className="text-3xl font-extrabold">{ride.price}</span>
+                  <span className="text-3xl font-bold">{ride.price}</span>
                   <span className={`text-sm ${ride.dark ? 'text-white/60' : 'text-ink-muted'}`}>
                     · {ride.eta} pickup
                   </span>
