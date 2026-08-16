@@ -10,13 +10,25 @@ function ArrowIcon() {
 
 export function Hero() {
   return (
-    <section id="book" className="section-padding relative pt-36 md:pt-44">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-32 top-20 h-[520px] w-[520px] rounded-full bg-brand/8 blur-3xl animate-float" />
-        <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-brand/5 blur-3xl animate-float-reverse" />
+    <section id="book" className="section-padding relative pt-36 md:pt-44 min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background Image of EasiRide Driver & Cab */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/hero-driver-bg.jpg"
+          alt="EasiRide cab driver driving"
+          className="h-full w-full object-cover object-right-top md:object-center opacity-30 dark:opacity-40"
+        />
+        {/* Subtle Gradient Overlays for contrast and seamless blend */}
+        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/85 to-surface/40 dark:from-surface dark:via-surface/90 dark:to-surface/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/60" />
       </div>
 
-      <div className="container-wide relative grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute -right-32 top-20 h-[520px] w-[520px] rounded-full bg-brand/10 blur-3xl animate-float" />
+        <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-brand/10 blur-3xl animate-float-reverse" />
+      </div>
+
+      <div className="container-wide relative z-10 grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeIn direction="left" delay={150}>
           <div className="max-w-xl">
             <span className="label-tag">Premium mobility in Bayelsa</span>
