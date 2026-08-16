@@ -38,6 +38,9 @@ export function Footer() {
                 <p className="text-sm text-ink-muted">
                   &copy; {new Date().getFullYear()} EasiRide. All rights reserved.
                 </p>
+                <p className="mt-1 text-xs text-ink-muted/80">
+                  Designed by donatus.
+                </p>
               </div>
             </div>
           </FadeIn>
@@ -120,6 +123,9 @@ export function Footer() {
               <div className="mt-12 border-t border-border pt-8 w-full text-center lg:hidden">
                 <p className="text-sm text-ink-muted">
                   &copy; {new Date().getFullYear()} EasiRide. All rights reserved.
+                </p>
+                <p className="mt-1 text-xs text-ink-muted/80">
+                  Designed by donatus.
                 </p>
               </div>
             </div>

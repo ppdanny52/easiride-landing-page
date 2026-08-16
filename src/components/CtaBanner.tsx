@@ -6,29 +6,52 @@ export function CtaBanner() {
     <section id="download" className="px-4 py-12 sm:px-6 md:px-8 lg:px-12 md:py-20 overflow-hidden">
       <div className="container-wide">
         <FadeIn direction="up" duration={700} scale threshold={0.15}>
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand via-brand-light to-brand-dark px-6 pt-12 pb-16 text-white sm:px-10 md:px-14 md:pt-16 md:pb-24 shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand via-brand-light to-brand-dark px-6 pt-12 pb-14 text-white sm:px-10 md:px-12 md:pt-14 md:pb-16 shadow-2xl">
+            {/* Background decorative glow orbs */}
             <div className="pointer-events-none absolute inset-0 opacity-20">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white blur-3xl animate-float-reverse" />
             </div>
 
-            <div className="relative grid items-center gap-10 md:grid-cols-2 md:items-start md:gap-8 lg:grid-cols-[47fr_53fr] lg:items-center lg:gap-12">
-              <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left lg:max-w-none lg:pl-6 lg:pr-2 xl:pl-10">
+            {/* Grid Layout: Phone Mockup on Left, Content & Buttons on Right */}
+            <div className="relative grid items-center gap-10 md:grid-cols-12 md:gap-8 lg:gap-12">
+              
+              {/* Left Column: Phone Mockup */}
+              <div className="order-2 md:order-1 md:col-span-5 lg:col-span-5 flex justify-center md:justify-start">
+                <Parallax speed={0.05} className="w-full flex justify-center md:justify-start">
+                  <img
+                    src="/phone-mockup.png"
+                    alt="EasiRide App Mockup"
+                    loading="lazy"
+                    width="620"
+                    height="1270"
+                    className="h-auto w-[85%] max-w-[380px] md:max-w-[420px] object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.4)] animate-float-phone"
+                  />
+                </Parallax>
+              </div>
+
+              {/* Right Column: Text & Store CTA Buttons */}
+              <div className="order-1 md:order-2 md:col-span-7 lg:col-span-7 flex flex-col justify-center text-center md:text-left">
+                <FadeIn direction="up" delay={50} duration={600}>
+                  <p className="text-sm font-medium text-white/80 tracking-wide">
+                    Download the EasiRide app
+                  </p>
+                </FadeIn>
+
                 <FadeIn direction="up" delay={100} duration={600}>
-                  <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                    Ready to ride smarter in Bayelsa?
+                  <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl lg:text-[2.75rem] leading-[1.15]">
+                    Ready to ride smarter in Bayelsa? Get moving in seconds.
                   </h2>
                 </FadeIn>
 
                 <FadeIn direction="up" delay={200} duration={600}>
-                  <p className="mt-4 text-lg text-white/80 lg:mt-6">
-                    Download the EasiRide app today. Experience safe, reliable, and convenient transportation
-                    across Yenagoa with transparent upfront pricing and verified drivers.
+                  <p className="mt-4 text-base md:text-lg text-white/80 max-w-xl">
+                    Experience safe, reliable, and convenient transportation across Yenagoa with transparent upfront pricing and verified drivers.
                   </p>
                 </FadeIn>
 
                 <FadeIn direction="up" delay={300} duration={600}>
-                  <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start lg:mt-12">
+                  <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start">
                     <a
                       href="#"
                       className="inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
@@ -51,18 +74,6 @@ export function CtaBanner() {
                 </FadeIn>
               </div>
 
-              <div className="flex justify-center md:justify-end lg:min-w-0 lg:self-center">
-                <Parallax speed={0.05} className="w-full flex justify-center md:justify-end">
-                  <img
-                    src="/phone-mockup.png"
-                    alt="EasiRide App Mockup"
-                    loading="lazy"
-                    width="620"
-                    height="1270"
-                    className="h-auto w-[90%] max-w-[620px] object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.4)] animate-float-phone md:w-full md:max-w-[min(100%,620px)]"
-                  />
-                </Parallax>
-              </div>
             </div>
           </div>
         </FadeIn>
